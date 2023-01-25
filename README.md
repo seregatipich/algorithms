@@ -52,3 +52,41 @@ Output the numbers on one line, separated by spaces.
 <summary>
 <b>Manual Dexterity (<a href="manualDexterity.py">manualDexterity.py</a>)</b>
 </summary>
+  
+#### Problem
+  The "Speed Print Simulator" game is a 4x4 field of keys. In it a configuration of numbers and dots appears on each round. Either a dot or a number from 1 to 9 is written on the key.
+
+At time t the player must simultaneously press all the keys on which the digit t is written. Gosha and Timofey can press k keys each at a moment of time. If at time t all necessary keys are pressed, the players get 1 point.
+
+Find the number of points that Gosha and Timofey can earn, if they press the keys together.
+  
+#### Input format
+The first line contains an integer k (1 ≤ k ≤ 5).
+
+The next four lines give the form of the simulator - 4 characters in each line. Each character is either a dot or a digit from 1 to 9. Characters on one line are consecutive and not separated by spaces.
+  
+#### Output format
+Output a single number - the maximum number of points that Gosha and Timothy can score.
+
+#### Пример
+<table><tbody>
+  <tr>
+    <td><b>Ввод</b></td>
+    <td><b>Вывод</b></td>
+  </tr>
+  <tr>
+    <td valign='top'>
+3<br>
+1231<br>
+2..2<br>
+2..2<br>
+2..2<br>
+
+</td>
+  <td valign='top'>
+2<br>
+</td>
+  </tr>
+</tbody></table>
+
+</details>
