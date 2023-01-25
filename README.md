@@ -45,7 +45,7 @@ Output the numbers on one line, separated by spaces.
 </tbody></table>
 </details>
 
-------  
+
 
 <details>
 <summary>
