@@ -100,6 +100,16 @@ Output a single number - the maximum number of points that Gosha and Timothy can
   Gosha has implemented a data structure Dec, whose maximum size is defined by a given number. Methods push_back(x), push_front(x), pop_back(), pop_front() worked correctly. But if there were a lot of items in the deck, the program took very long. The thing is, not all operations were performed in O(1). Help Gosha! Write an efficient implementation.
 
 Note: When implementing, use a ring buffer.
+#### Input format
+  The first line contains the number of commands n - an integer not exceeding 100000. The second line contains a number m - the maximum size of the deck. It does not exceed 50,000. The next n lines contain one of the commands:
+
+push_back(value) - add an element to the end of the deck. If the deck already contains the maximum number of items, print "error".
+push_front(value) - add an item to the beginning of the deck. If maximal number of items is already in the deck, print "error".
+pop_front() - print first element of the deck and remove it. If the deck was empty print "error".
+pop_back() - output the last element of the deck and remove it. If the deck has been emptied, output "error".
+Value - integer modulo not greater than 1000.
+#### Output format
+  Output the result of each command on a separate line. For successful push_back(x) and push_front(x) queries nothing needs to be output.
 </details>
 
 ------
