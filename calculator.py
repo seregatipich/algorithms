@@ -9,7 +9,7 @@ OPERATIONS = {
 
 class Stack:
     
-    def __init__(self):
+    def __init__(self) -> None:
         self.__items = []
     
     def push(self, item):
@@ -19,12 +19,12 @@ class Stack:
         return self.__items.pop()
 
 
-def read_input():
+def read_input() -> list:
     chars: list = input().split()
     return chars
 
 
-def calc(stack: Stack, list_of_symbols: list):
+def calc(stack: Stack, list_of_symbols: list) -> list:
     for symbol in list_of_symbols:
         if symbol in OPERATIONS:
             operation = OPERATIONS[symbol]
@@ -34,7 +34,7 @@ def calc(stack: Stack, list_of_symbols: list):
     return stack.pop()
 
 
-def main():
+def main() -> None:
     list_of_symbols = read_input()
     stack = Stack()
     result = calc(stack, list_of_symbols)
