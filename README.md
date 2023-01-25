@@ -101,4 +101,5 @@ Output a single number - the maximum number of points that Gosha and Timothy can
 
 Note: When implementing, use a ring buffer.
 </details>
+
 ------
