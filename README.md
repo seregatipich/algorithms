@@ -15,3 +15,9 @@ Solving algorithm problems in Python language
 Social Timofey doesn't want to live far away from other people on that street. That's why for each plot he needs to know the distance to the nearest empty plot. If the plot is empty, this value will be zero - the distance to himself.
 
 Help Timothy calculate the distances he is looking for. You have a street map to do this. The houses in Timothy's town are numbered in the order in which they were built, so their numbers are not ordered on the map in any way. Empty areas are marked with zeros.
+
+#### Input format
+The first line contains street length n (1 ≤ n ≤ 106). 
+The next line contains n non-negative integers - house numbers and designations of empty areas on the map (zeros). 
+It is guaranteed that there is at least one zero in the sequence. 
+The house numbers (positive numbers) are unique and do not exceed 10^9.
