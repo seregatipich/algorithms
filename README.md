@@ -70,8 +70,8 @@ Output a single number - the maximum number of points that Gosha and Timothy can
 #### Пример
 <table><tbody>
   <tr>
-    <td><b>Ввод</b></td>
-    <td><b>Вывод</b></td>
+    <td><b>Input</b></td>
+    <td><b>Output</b></td>
   </tr>
   <tr>
     <td valign='top'>
@@ -113,8 +113,8 @@ Value - integer modulo not greater than 1000.
 #### Example
 <table><tbody>
   <tr>
-    <td><b>Ввод</b></td>
-    <td><b>Вывод</b></td>
+    <td><b>Input</b></td>
+    <td><b>Output</b></td>
   </tr>
   <tr>
     <td valign="top">
@@ -135,3 +135,79 @@ pop_back<br>
 </tbody></table>
 
 </details>
+
+<details>
+<summary>
+<b>Calculator (<a href="calculator.py">calculator.py</a>)</b>
+</summary>
+
+#### Problem
+  The task is related to reverse polish notation. It is used for parsing arithmetic expressions. It is also sometimes called postfix notation.
+
+In postfix notation, the operands are in front of the operation signs.
+
+Example 1:
+3 4 +
+means 3 + 4 and equals 7
+
+Example 2:
+12 5 /
+Since division is integer, the result is 2.
+
+Example 3:
+10 2 4 * -
+means 10 - 2 * 4 and equals 2
+
+Let us go into the last example in detail:
+
+The * sign stands right after 2 and 4, so the operation it stands for must be applied to them, i.e. the two numbers are multiplied. The result is 8.
+
+The expression then takes the form
+
+10 8 -
+
+Minus' should be applied to the preceding two numbers, 10 and 8. The result is 2.
+
+Let's take a closer look at the algorithm. We will use the stack to implement it.
+
+To calculate the value of an expression written in the reverse polish notation, read the expression from left to right and follow the following steps:
+
+Handling the input symbol:
+If an operand is given as input, it is placed at the top of the stack.
+If an operand is input, this operation is performed on the required number of values taken from the stack in order of addition. The result of the operation performed is placed at the top of the stack.
+If the input character set is not completely processed, skip to step 1.
+When the input character set is completely processed, the result of expression calculation is placed at the top of the stack. If there are several numbers left in the stack, only the top element should be printed.
+Note about negative numbers and division: in this problem, division means mathematical integer division. This means it is always rounded down. Namely, if a / b = c, then b ⋅ c is the largest number that does not exceed a and is simultaneously divisible by b without a remainder.
+
+For example, -1 / 3 = -1. Be careful: in C++, Java and Go, for example, number division works differently.
+
+In the current problem, it is guaranteed that there is no division by a negative number.
+#### Input format
+  The only line contains an expression written in inverse Polish notation. Numbers and arithmetic operations are written with a space.
+
+The following operations can be input: +, -, *, / and numbers not exceeding 10000 modulo.
+
+It is guaranteed that the value of intermediate expressions in the test data modulo does not exceed 50000.
+#### Output format
+  Output the singular - the value of the expression.
+#### Example
+<table><tbody>
+  <tr>
+    <td><b>Input</b></td>
+    <td><b>Output</b></td>
+  </tr>
+  <tr>
+    <td valign="top">
+2 1 + 3 *
+
+</td>
+    <td valign="top">
+9
+
+</td>
+  </tr>
+</tbody></table>
+
+</details>
+
+---
