@@ -110,6 +110,28 @@ pop_back() - output the last element of the deck and remove it. If the deck has 
 Value - integer modulo not greater than 1000.
 #### Output format
   Output the result of each command on a separate line. For successful push_back(x) and push_front(x) queries nothing needs to be output.
-</details>
+#### Example
+<table><tbody>
+  <tr>
+    <td><b>Ввод</b></td>
+    <td><b>Вывод</b></td>
+  </tr>
+  <tr>
+    <td valign="top">
+4<br>
+4<br>
+push_front 861<br>
+push_front -819<br>
+pop_back<br>
+pop_back<br>
 
-------
+</td>
+    <td valign="top">
+861<br>
+-819<br>
+
+</td>
+  </tr>
+</tbody></table>
+
+</details>
