@@ -43,7 +43,6 @@ Output the numbers on one line, separated by spaces.
 </td>
   </tr>
 </tbody></table>
-
 </details>
 
 ------  
@@ -88,5 +87,18 @@ Output a single number - the maximum number of points that Gosha and Timothy can
 </td>
   </tr>
 </tbody></table>
-
 </details>
+
+---
+
+<details>
+<summary>
+<b>Deque (<a href="deque.py">deque.py</a>)</b>
+</summary>
+
+#### Problem
+  Gosha has implemented a data structure Dec, whose maximum size is defined by a given number. Methods push_back(x), push_front(x), pop_back(), pop_front() worked correctly. But if there were a lot of items in the deck, the program took very long. The thing is, not all operations were performed in O(1). Help Gosha! Write an efficient implementation.
+
+Note: When implementing, use a ring buffer.
+</details>
+------
