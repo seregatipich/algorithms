@@ -47,3 +47,8 @@ Output the numbers on one line, separated by spaces.
 </details>
 
 ------  
+
+<details>
+<summary>
+<b>Manual Dexterity (<a href="manualDexterity.py">manualDexterity.py</a>)</b>
+</summary>
