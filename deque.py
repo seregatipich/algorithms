@@ -1,4 +1,4 @@
-# 81319040
+# 81347731
 from typing import Tuple
 
 
@@ -11,7 +11,7 @@ class QueueIsEmpty(Exception):
 
 
 class MyQueueSized:
-    def __init__(self, max_size):
+    def __init__(self, max_size) -> None:
         self.__max_size: int = max_size
         self.__queue: list = [None] * max_size
         self.__head: int = 0
@@ -24,7 +24,7 @@ class MyQueueSized:
     def _queue_is_full(self) -> bool:
         return self.__size_of_queue >= self.__max_size
 
-    def _get_index_by_method(self, name) -> int:
+    def _get_index_by_method(self, name: str) -> int:
         results = {
             'push_front': self.__head - 1,
             'push_back': self.__tail + 1,
@@ -34,7 +34,7 @@ class MyQueueSized:
         index = results.get(name) % self.__max_size
         return index
 
-    def push_front(self, x) -> None:
+    def push_front(self, x: int) -> None:
         if self._queue_is_full():
             raise QueueIsFull
 
@@ -42,7 +42,7 @@ class MyQueueSized:
         self.__queue[self.__head] = x
         self.__size_of_queue += 1
 
-    def push_back(self, x) -> None:
+    def push_back(self, x: int) -> None:
         if self._queue_is_full():
             raise QueueIsFull
 
