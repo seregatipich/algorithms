@@ -1,45 +1,28 @@
-def find_min_index(arr):
-    n = len(arr)
-    low = 0
-    high = n - 1
+# 82135524
 
-    while low <= high:
-        mid = (low + high) // 2
-        if arr[mid] < arr[(mid + 1) % n] and arr[mid] < arr[(mid - 1 + n) % n]:
-            return mid
-        elif arr[mid] < arr[high]:
-            high = mid - 1
+def broken_search(nums: list, target: int) -> int:
+    start_idx = 0
+    end_idx = len(nums) - 1
+    while start_idx <= end_idx:
+        mid_idx = (start_idx + end_idx) // 2
+        if nums[mid_idx] == target:
+            return mid_idx
+        elif nums[start_idx] <= nums[mid_idx]:
+            if nums[start_idx] <= target < nums[mid_idx]:
+                end_idx = mid_idx - 1
+            else:
+                start_idx = mid_idx + 1
         else:
-            low = mid + 1
-
+            if nums[mid_idx] < target <= nums[end_idx]:
+                start_idx = mid_idx + 1
+            else:
+                end_idx = mid_idx - 1
     return -1
-
-
-def binary_search(arr, target):
-    low = 0
-    high = len(arr) - 1
-
-    while low <= high:
-        mid = (low + high) // 2
-        if arr[mid] == target:
-            return mid
-        elif arr[mid] < target:
-            low = mid + 1
-        else:
-            high = mid - 1
-
-    return -1
-
-
-def main(arr, target):
-    n = len(arr)
-    min_index = find_min_index(arr)
-
-    if target >= arr[min_index] and target <= arr[n - 1]:
-        return binary_search(arr[min_index:], target)
-    else:
-        return binary_search(arr[:min_index], target)
 
 
 if __name__ == '__main__':
-    main()
+    count_array = int(input())
+    target_number = int(input())
+    numbers_array = [int(num) for num in input().split()]
+
+    print(broken_search(numbers_array, target_number))
