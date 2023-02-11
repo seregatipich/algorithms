@@ -1,4 +1,4 @@
-# 81319314
+# 81348000
 OPERATIONS = {
     '+': lambda x, y: y + x,
     '-': lambda x, y: y - x,
@@ -12,10 +12,10 @@ class Stack:
     def __init__(self) -> None:
         self.__items = []
     
-    def push(self, item):
+    def push(self, item: int) -> None:
         self.__items.append(item)
     
-    def pop(self):
+    def pop(self) -> int:
         return self.__items.pop()
 
 
