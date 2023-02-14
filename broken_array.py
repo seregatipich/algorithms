@@ -1,28 +1,38 @@
-# 82135524
+# 82138186
 
 def broken_search(nums: list, target: int) -> int:
-    start_idx = 0
-    end_idx = len(nums) - 1
-    while start_idx <= end_idx:
-        mid_idx = (start_idx + end_idx) // 2
-        if nums[mid_idx] == target:
-            return mid_idx
-        elif nums[start_idx] <= nums[mid_idx]:
-            if nums[start_idx] <= target < nums[mid_idx]:
-                end_idx = mid_idx - 1
+    if len(nums) == 1 and nums[0] != target:
+        return -1
+
+    left, right = 0, len(nums) - 1
+
+    while left <= right:
+        if nums[left] == target:
+            return left
+
+        if nums[right] == target:
+            return right
+
+        mid_index = (left + right) // 2
+        mid_number = nums[mid_index]
+
+        if mid_number == target:
+            return mid_index
+
+        if nums[left] <= mid_number:
+            if nums[left] < target < mid_number:
+                right = mid_index - 1
             else:
-                start_idx = mid_idx + 1
+                left = mid_index + 1
+
         else:
-            if nums[mid_idx] < target <= nums[end_idx]:
-                start_idx = mid_idx + 1
+            if mid_number < target < nums[right]:
+                left = mid_index + 1
             else:
-                end_idx = mid_idx - 1
+                right = mid_index - 1
     return -1
 
 
-if __name__ == '__main__':
-    count_array = int(input())
-    target_number = int(input())
-    numbers_array = [int(num) for num in input().split()]
-
-    print(broken_search(numbers_array, target_number))
+def test():
+    arr = [19, 21, 100, 101, 1, 4, 5, 7, 12]
+    assert broken_search(arr, 5) == 6

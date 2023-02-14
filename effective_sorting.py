@@ -1,12 +1,12 @@
 # 81840810
 
 class Participant:
-    def __init__(self, email, score, fine):
+    def __init__(self, email: str, score: int, fine: int) -> None:
         self.email = email
         self.score = score
         self.fine = fine
 
-    def __lt__(self, other):
+    def __lt__(self, other) -> bool:
         return (-self.score, self.fine, self.email) < (
             -other.score, other.fine, other.email)
 
@@ -14,12 +14,12 @@ class Participant:
         return self.email
 
 
-def quick_sort(array, left, right):
+def quick_sort(array: list, left: int, right: int) -> None:
     if left >= right:
         return
     i = left
     j = right
-    pivot = array[(i+j)//2]
+    pivot = array[(i + j) // 2]
     while True:
         while array[i] < pivot:
             i += 1
